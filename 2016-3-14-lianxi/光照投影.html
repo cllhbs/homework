@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; }
+p{ width:500px; height:100px; position:absolute; left:50%; top:50%; margin-left:-250px; margin-top:-50px; font-size:50px; text-shadow:0 0 0 #000; font-family:黑体; font-weight:bold;  }
+span{ position:absolute; left:0; top:0; width:100px; height:100px; background:#F60; border-radius:50%; box-shadow:0 0 100px yellow; z-index:2; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function (){
+	var oP=document.getElementsByTagName('p')[0];
+	var oS=document.getElementsByTagName('span')[0];
+	document.onmousemove=function (ev){
+		oS.style.left=ev.clientX-oS.offsetWidth/2+'px';
+		oS.style.top=ev.clientY-oS.offsetHeight/2+'px';
+		var disX=(oP.offsetLeft+oP.offsetWidth/2)-(oS.offsetLeft+oS.offsetWidth/2);
+		var disY=(oP.offsetTop+oP.offsetHeight/2)-(oS.offsetTop+oS.offsetHeight/2);
+		var c = Math.sqrt(disX*disX+disY*disY);
+		oP.style.textShadow=disX/2+'px '+disY/2+'px '+c/10+'px #000'; 
+	};
+},false);
+</script>
+</head>
+
+<body>
+	<span></span>
+	<p>我是真的困了</p>
+</body>
+</html>

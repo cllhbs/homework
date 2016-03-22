@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; }
+@keyframes test{
+	from{ width:100px; height:100px;}
+	to{ width:500px; height:500px }
+}
+#div1{ width:100px; height:100px; background:red; }
+#div1:active{
+	animation-name:test;
+	animation-duration:5s;
+	animation-timing-function:ease-out;
+}
+</style>
+</head>
+
+<body>
+	<div id="div1"></div>
+</body>
+</html>

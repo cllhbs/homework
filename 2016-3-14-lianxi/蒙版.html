@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; }
+div{ width:1000px; height:600px; background:url(3.jpg) no-repeat; margin:10px auto; background-size:contain; -webkit-mask:url(3.png) no-repeat; -webit-mask-position:0 0;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function (){
+	var oDiv=document.querySelector('div');
+	document.onmousemove=function (ev){
+		oDiv.style.WebkitMaskPosition= ev.clientX-500+'px '+(ev.clientY-200)+'px';
+	};
+},false);
+</script>
+</head>
+
+<body>
+	<div></div>
+</body>
+</html>

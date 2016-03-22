@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; }
+#div{ width:200px; height:200px; background:red; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function (){
+	var oDiv=document.getElementsByTagName('div')[0];
+	oDiv.onclick=function (){
+		oDiv.style.WebkitTransition='1s all ease';
+		oDiv.style.width='500px';
+//		setTimeout(function (){
+//			alert(1);
+//		},1000);
+		oDiv.addEventListener('transitionend',function(){
+			oDiv.style.height='500px';
+			oDiv.addEventListener('transitionend',function (){
+				alert(1);
+			},false);
+		},false);
+	};
+},false);
+</script>
+</head>
+
+<body>
+	<div id="div"></div>
+</body>
+</html>
